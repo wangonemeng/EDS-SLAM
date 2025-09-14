@@ -1,0 +1,188 @@
+
+max_iteration: 4
+img_enable: 1
+lidar_enable: 1
+
+point_filter_num: 4
+filter_size_surf: 0.2
+filter_size_map: 0.4
+
+common:
+    lid_topic:  /livox/lidar
+    imu_topic:  /livox/imu
+    # img_topic:  /left_camera/image
+    img_topic:  /camera/image_raw
+
+preprocess:
+    lidar_type: 1 # Livox Avia LiDAR
+    scan_line: 6
+    blind: 0.5 # blind x m disable
+    timestamp_unit: 3
+
+mapping:
+    # gyr_cov: 0.1
+    gyr_cov: 0.001
+    acc_cov: 0.1
+    b_gyr_cov: 0.0001
+    b_acc_cov: 0.0001
+    laser_point_cov: 0.001
+    det_range: 450.0
+    fov_degree: 120
+    extrinsic_est_en: false
+    extrinsic_T: [ 0.04165, 0.02326, -0.0284 ]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+    # Rcl: [0.00162756,-0.999991,0.00390957,
+    #      -0.0126748,-0.00392989,-0.999912,
+    #       0.999918,0.00157786,-0.012681]
+    # Pcl: [0.0409257, 0.0318424, -0.0927219]
+    # Rcl: [0.0077424,-0.999954,-0.00566811,
+    #       0.0111473,0.00575424,-0.999921,
+    #       0.999908,0.00767861,0.0111914]
+    # Pcl: [-0.198955, -0.0428033, 0.181206]
+    Rcl: [0.0105053,-0.999944,0.000932287,
+          0.00990412,-0.000828241,-0.999951,
+          0.999896,0.010514,0.00989487,]
+    Pcl: [0.00787518, -0.0382755, 0.0178531]
+
+    # Rcl: [0.00989238,-0.999932,0.00614033,
+    #    0.00612358,-0.00607993,-0.999963,
+    #    0.999932,0.00992961,0.00606302]
+    # Pcl: [0.0589283, 0.0220072, 0.0818484]
+camera:
+    debug: 0
+    #visual_point_cov: 500
+    visual_point_cov: 1000
+    # cam_width: 640
+    # cam_height: 512
+    # cam_fx: 431.712
+    # cam_fy: 431.7085
+    # cam_cx: 320.3404
+    # cam_cy: 259.1696
+    cam_width: 1280
+    cam_height: 1024
+    cam_fx: 1281.4
+    cam_fy: 1281.9
+    cam_cx: 629.0409
+    cam_cy: 581.1071
+    # cam_width: 1280
+    # cam_height: 1024
+    # cam_fx: 1294.6
+    # cam_fy: 1294.1
+    # cam_cx: 625.5280
+    # cam_cy: 519.3067
+    grid_size: 30
+    #grid_size: 50
+    patch_size: 8
+
+publish:
+    path_en: true
+    scan_publish_en: true
+    dense_publish_en: true
+    scan_bodyframe_pub_en: true
+
+pcd_save:
+    pcd_save_en: true
+    interval: -1
+# max_iteration: 5
+# img_enable: 1
+# lidar_enable: 1
+
+# point_filter_num: 4
+# filter_size_surf: 0.2
+# filter_size_map: 0.4
+
+# common:
+#     lid_topic:  /livox/lidar
+#     imu_topic:  /livox/imu
+#     # img_topic:  /left_camera/image
+#     img_topic:  /camera/image_raw
+
+# preprocess:
+#     lidar_type: 1 # Livox Avia LiDAR
+#     scan_line: 6
+#     blind: 0.5 # blind x m disable
+#     timestamp_unit: 3
+
+# mapping:
+#     # gyr_cov: 0.1
+#     gyr_cov: 0.05
+#     acc_cov: 0.1
+#     b_gyr_cov: 0.0001
+#     b_acc_cov: 0.0001
+#     laser_point_cov: 0.001
+#     det_range: 450.0
+#     fov_degree: 90
+#     extrinsic_est_en: false
+#     extrinsic_T: [ 0.04165, 0.02326, -0.0284 ]
+#     extrinsic_R: [ 1, 0, 0,
+#                    0, 1, 0,
+#                    0, 0, 1]
+#     # Rcl: [0.00162756,-0.999991,0.00390957,
+#     #      -0.0126748,-0.00392989,-0.999912,
+#     #       0.999918,0.00157786,-0.012681]
+#     # Pcl: [0.0409257, 0.0318424, -0.0927219]
+#     Rcl: [0.0077424,-0.999954,-0.00566811,
+#           0.0111473,0.00575424,-0.999921,
+#           0.999908,0.00767861,0.0111914]
+#     Pcl: [-0.198955, -0.0428033, 0.181206]
+ 
+
+# camera:
+#     debug: 0
+#     #visual_point_cov: 500
+#     visual_point_cov: 200
+#     # cam_width: 640
+#     # cam_height: 512
+#     # cam_fx: 431.712
+#     # cam_fy: 431.7085
+#     # cam_cx: 320.3404
+#     # cam_cy: 259.1696
+#     cam_width: 1280
+#     cam_height: 1024
+#     cam_fx: 1281.4
+#     cam_fy: 1281.9
+#     cam_cx: 629.0409
+#     cam_cy: 581.1071
+#     #grid_size: 40
+#     grid_size: 30
+#     patch_size: 8
+
+# publish:
+#     path_en: true
+#     scan_publish_en: true
+#     dense_publish_en: true
+#     scan_bodyframe_pub_en: true
+
+# pcd_save:
+#     pcd_save_en: false
+#     interval: -1
+#     # gyr_cov: 0.1
+#     gyr_cov: 0.05
+#     acc_cov: 0.1
+#     b_gyr_cov: 0.0001
+#     b_acc_cov: 0.0001
+#     laser_point_cov: 0.001
+#     det_range: 450.0
+#     fov_degree: 90
+#     extrinsic_est_en: false
+#     extrinsic_T: [ 0.04165, 0.02326, -0.0284 ]
+#     extrinsic_R: [ 1, 0, 0,
+#                    0, 1, 0,
+#                    0, 0, 1]
+#     # Rcl: [0.00162756,-0.999991,0.00390957,
+#     #      -0.0126748,-0.00392989,-0.999912,
+#     #       0.999918,0.00157786,-0.012681]
+#     # Pcl: [0.0409257, 0.0318424, -0.0927219]
+#     Rcl: [0.0077424,-0.999954,-0.00566811,
+#           0.0111473,0.00575424,-0.999921,
+#           0.999908,0.00767861,0.0111914]
+#     Pcl: [-0.198955, -0.0428033, 0.181206]
+ 
+
+
+
+# pcd_save:
+#     pcd_save_en: false
+#     interval: -1

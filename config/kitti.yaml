@@ -1,0 +1,61 @@
+max_iteration: 4
+img_enable: 1
+lidar_enable: 1
+
+point_filter_num: 4
+filter_size_surf: 0.5
+filter_size_map: 0.5
+
+
+common:
+     lid_topic:   /points_raw
+     imu_topic:   /imu_raw
+     img_topic:   /kitti/camera_gray_left/image_raw
+
+preprocess:
+    lidar_type: 4 # Livox Avia LiDAR
+    scan_line: 64
+    blind: 0.5 # blind x m disable
+    timestamp_unit: 3
+
+mapping:
+    gyr_cov: 0.05
+    acc_cov: 0.1
+    b_gyr_cov: 0.0001
+    b_acc_cov: 0.0001
+    laser_point_cov: 0.001
+    det_range: 450.0
+    fov_degree: 90
+    extrinsic_est_en: false
+    extrinsic_T: [8.086759e-01, -3.195559e-01, 7.997231e-01]
+    extrinsic_R: [9.999976e-01, -7.854027e-04, 2.024406e-03,
+                  7.553071e-04,  9.998898e-01, 1.482454e-02,
+                  -2.035826e-03, -1.482298e-02, 9.998881e-01]
+    Rcl: [7.53374550e-03, -9.99971465e-01, -6.16600803e-04,
+          1.48024938e-02,  7.28078927e-04, -9.99890144e-01,
+          9.99862007e-01,  7.52379127e-03,  1.48075522e-02]
+    Pcl: [2.76988494e-02, -5.48250920e-02, -2.67312016e-01]
+
+
+camera:
+    debug: 0
+    visual_point_cov: 10000000 # 00: 100, 01: 200
+    cam_width: 1242
+    cam_height: 375
+    cam_fx: 7.215377e+02
+    cam_fy: 7.215377e+02
+    cam_cx: 6.095593e+02
+    cam_cy: 1.728540e+02
+    grid_size: 60
+    patch_size: 8
+
+
+publish:
+    path_en: true
+    scan_publish_en: true
+    dense_publish_en: true
+    scan_bodyframe_pub_en: true
+
+pcd_save:
+    pcd_save_en: false
+    interval: -1

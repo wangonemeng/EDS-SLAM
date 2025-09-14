@@ -1,0 +1,60 @@
+max_iteration: 4
+img_enable: 1
+lidar_enable: 1
+
+point_filter_num: 4
+filter_size_surf: 0.5
+filter_size_map: 0.5
+feature_extract_enable: 0
+runtime_pos_log_enable: 0
+
+common:
+    lid_topic:  /os1_cloud_node1/points
+    imu_topic:  /imu/imu
+    img_topic:  /left/image_raw
+
+preprocess:
+    lidar_type: 3 # Ouster
+    scan_line: 16
+    blind: 4 # blind x m disable
+    timestamp_unit: 3
+
+mapping:
+    gyr_cov: 0.1
+    acc_cov: 0.1
+    b_gyr_cov: 0.0001
+    b_acc_cov: 0.0001
+    laser_point_cov: 0.001
+    det_range: 450.0
+    fov_degree: 90
+    extrinsic_est_en: false
+    extrinsic_T: [-0.05, 0.0, 0.055]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+    Rcl: [0.0218308, 0.99976, -0.00201407,
+         -0.0131205, 0.00230088, 0.999911,
+          0.999676, -0.0218025, 0.0131676]
+    Pcl: [0.122993,  0.0398643, -0.0577101]
+
+camera:
+    debug: 1
+    visual_point_cov: 10000
+    cam_width: 752
+    cam_height: 480
+    cam_fx: 431.712
+    cam_fy: 431.7085
+    cam_cx: 320.3404
+    cam_cy: 259.1696
+    grid_size: 40
+    patch_size: 8
+
+publish:
+    path_en: true
+    scan_publish_en: true
+    dense_publish_en: true
+    scan_bodyframe_pub_en: true
+
+pcd_save:
+    pcd_save_en: false
+    interval: -1

@@ -1,0 +1,17 @@
+################################################################################
+# sophus source dir
+set( sophus_SOURCE_DIR "@CMAKE_CURRENT_SOURCE_DIR@")
+
+################################################################################
+# sophus build dir
+set( sophus_DIR "@CMAKE_CURRENT_BINARY_DIR@")
+
+################################################################################
+set( sophus_INCLUDE_DIR  "@sophus_INCLUDE_DIR@" )
+set( sophus_INCLUDE_DIRS  "@sophus_INCLUDE_DIR@" )
+
+set( sophus_LIBRARIES    "@sophus_LIBRARIES@" )
+set( sophus_LIBRARY      "@sophus_LIBRARIES@" )
+
+set( sophus_LIBRARY_DIR  "@sophus_LIBRARY_DIR@" )
+set( sophus_LIBRARY_DIRS "@sophus_LIBRARY_DIR@" )
