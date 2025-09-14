@@ -69,7 +69,7 @@ Follow [livox_ros_driver Installation](https://github.com/Livox-SDK/livox_ros_dr
 
 ### 2.6 **CUDA and CUDNN**
 
-Please install CUDA 11.6 and the corresponding version of cuDNN.
+Please install CUDA 11.6 and the corresponding version of CUDNN.
 
 ### 2.7 **Model and TensorRT8**
 
@@ -105,5 +105,4 @@ source ~/catkin_ws/devel/setup.bash
 roslaunch point_livo fastlivo.launch
 rosbag play YOUR_BAG.bag
 ```
-**note**
 The first time it runs, it will take approximately 10 minutes to convert the ONNX model to a TRT model.
